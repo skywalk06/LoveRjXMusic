@@ -29,8 +29,7 @@ admins = [OWNER_ID]
 async def start(client, message):
     await message.reply_photo(
         photo=random.choice(START_IMAGES),
-        caption = "🎧 *LoveRJ on Streaming!*"
-caption = "Powered by LoveRjXMusic"
+        caption="🎧 *LoveRJ on Streaming!*\n🔊 Powered by LoveRjXMusic",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("▶️ Play", callback_data="play")],
             [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
@@ -82,15 +81,18 @@ async def callbacks(_, query):
         await query.answer("🔄 Restarted")
     elif query.data == "play":
         await vc.join_group_call(chat_id, InputStream(HighQualityAudio()))
-        # Simulate song metadata
+        # Simulated song metadata
         title = "Test Song Title"
         duration = "03:45"
-        thumb = "https://telegra.ph/file/9f2443e4d0b8efb7b70e9.jpg"  # Album art
+        thumb = "https://telegra.ph/file/9f2443e4d0b8efb7b70e9.jpg"
         await query.message.reply_photo(
             photo=thumb,
-            caption = f"🎧 **Now Playing:** {title}\n⏱️ Duration: {duration}\n👤 Played by: {user}"
-                    f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})"
-                    f"Powered by LoveRjXMusic",
+            caption=(
+                f"🎧 **Now Playing:** {title}\n"
+                f"⏱️ Duration: {duration}\n"
+                f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})\n"
+                f"🔊 Powered by LoveRjXMusic"
+            ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
                  InlineKeyboardButton("▶️ Resume", callback_data="resume")],
@@ -106,13 +108,3 @@ user.start()
 vc.start()
 print("LoveRjXMusic is running...")
 idle()
-# Example values (replace with real-time values)
-current = 47
-total = 225
-progress = get_progress_bar(current, total)
-
-caption = f"""
-🎧 Title: Ram Siya Ram
-📊 {progress}
-🎙️ Played by: @username
-"""
