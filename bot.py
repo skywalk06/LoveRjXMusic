@@ -91,9 +91,7 @@ async def callbacks(_, query):
         await query.message.reply_photo(
             photo=thumb,
             caption = f"🎧 **Now Playing:** {title}\n⏱️ Duration: {duration}\n👤 Played by: {user}"
-"
-                    f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})
-"
+                    f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})"
                     f"Powered by LoveRjXMusic",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
