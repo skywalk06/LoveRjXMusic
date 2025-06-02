@@ -32,7 +32,7 @@ async def start(client, message):
         caption = """🎧 **LoveRJ on Streaming!**
 🎵 Enjoy the music!
 """
-💠 Powered by @LoveRjXMusic",
+caption = "Powered by LoveRjXMusic"
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("▶️ Play", callback_data="play")],
             [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
