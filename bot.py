@@ -90,9 +90,7 @@ async def callbacks(_, query):
         thumb = "https://telegra.ph/file/9f2443e4d0b8efb7b70e9.jpg"  # Album art
         await query.message.reply_photo(
             photo=thumb,
-            caption=f"🎧 **Now Playing:** {title}"
-"
-                    f"⏱ **Duration:** `{duration}`
+            caption = f"🎧 **Now Playing:** {title}\n⏱️ Duration: {duration}\n👤 Played by: {user}"
 "
                     f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})
 "
