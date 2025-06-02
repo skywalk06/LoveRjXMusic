@@ -5,7 +5,6 @@ from pytgcalls import PyTgCalls, idle
 from pytgcalls.types.input_stream import InputStream
 from pytgcalls.types.input_stream.quality import HighQualityAudio
 import random
-import os
 
 from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, SESSION_NAME
 
@@ -29,7 +28,7 @@ admins = [OWNER_ID]
 async def start(client, message):
     await message.reply_photo(
         photo=random.choice(START_IMAGES),
-        caption="🎧 *LoveRJ on Streaming!*\n🔊 Powered by LoveRjXMusic",
+        caption="🎧 *LoveRJ on Streaming!*\n\nPowered by LoveRjXMusic",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("▶️ Play", callback_data="play")],
             [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
@@ -81,7 +80,6 @@ async def callbacks(_, query):
         await query.answer("🔄 Restarted")
     elif query.data == "play":
         await vc.join_group_call(chat_id, InputStream(HighQualityAudio()))
-        # Simulated song metadata
         title = "Test Song Title"
         duration = "03:45"
         thumb = "https://telegra.ph/file/9f2443e4d0b8efb7b70e9.jpg"
@@ -91,7 +89,7 @@ async def callbacks(_, query):
                 f"🎧 **Now Playing:** {title}\n"
                 f"⏱️ Duration: {duration}\n"
                 f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})\n"
-                f"🔊 Powered by LoveRjXMusic"
+                f"🔧 Powered by LoveRjXMusic"
             ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
