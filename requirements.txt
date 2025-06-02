@@ -1,5 +1,3 @@
 pyrogram==2.0.106
-tgcrypto
-git+https://github.com/AnonymousR1025/py-tgcalls.git
-yt-dlp
-ffmpeg-python
+tgcrypto==1.2.5
+https://github.com/AnonymousR1025/py-tgcalls/archive/refs/heads/master.zip
