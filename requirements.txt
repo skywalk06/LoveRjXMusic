@@ -1,5 +1,5 @@
 pyrogram==2.0.106
 tgcrypto
-pytgcalls==1.2.3
+git+https://github.com/callsmusic/py-tgcalls
 yt-dlp
 ffmpeg-python
