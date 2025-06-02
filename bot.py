@@ -90,13 +90,13 @@ async def callbacks(_, query):
         thumb = "https://telegra.ph/file/9f2443e4d0b8efb7b70e9.jpg"  # Album art
         await query.message.reply_photo(
             photo=thumb,
-            caption=f"🎵 **Now Playing:** `{title}`
+            caption=f"🎧 **Now Playing:** {title}"
 "
                     f"⏱ **Duration:** `{duration}`
 "
                     f"🙋‍♂️ **Requested by:** [{query.from_user.first_name}](tg://user?id={user_id})
 "
-                    f"💠 Powered by @LoveRjXMusic",
+                    f"Powered by LoveRjXMusic",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("⏸ Pause", callback_data="pause"),
                  InlineKeyboardButton("▶️ Resume", callback_data="resume")],
