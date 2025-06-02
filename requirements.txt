@@ -1,3 +1,4 @@
-pyrogram==2.0.106
-tgcrypto==1.2.5
-https://github.com/AnonymousR1025/py-tgcalls/archive/refs/heads/master.zip
+aiohttp
+pyrogram
+tgcrypto
+./py-tgcalls
