@@ -29,7 +29,9 @@ admins = [OWNER_ID]
 async def start(client, message):
     await message.reply_photo(
         photo=random.choice(START_IMAGES),
-        caption="🎧 **LoveRJ on Streaming!**
+        caption = """🎧 **LoveRJ on Streaming!**
+🎵 Enjoy the music!
+"""
 💠 Powered by @LoveRjXMusic",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("▶️ Play", callback_data="play")],
